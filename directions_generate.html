@@ -1,0 +1,39 @@
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title>실내 길 안내 생성</title>
+        <style>
+            html, body {
+                height: 100%;
+                margin: 0;
+            }
+            iframe {
+                width: 100%;
+                height: 100%;
+                border: none;
+            }
+        </style>
+        <script>
+            function resizeIframe(iframe) {
+                // reset height to a small number first to calculate the correct scrollHeight
+                iframe.style.height = '0px';
+
+                // set the height to match the inner document's scroll height
+                iframe.style.height = iframe.contentWindow.document.body.scrollHeight + 'px';
+            }
+        </script>
+    </head>
+    <body>
+        <h2>실내 길 안내 생성 방법</h2>
+        <ol type="A">
+            <li><strong>관리자 계정 생성</strong></li>
+            <iframe src="guide/account.html" title="관리자 계정 생성" onload="resizeIframe(this)"></iframe>
+            <li><strong>템플릿 기반 길 안내 생성</strong></li>
+            <iframe src="guide/create.html" title="템플릿 기반 길 안내 생성" onload="resizeIframe(this)"></iframe>
+            <li><strong>길 안내 편집</strong></li>
+            <iframe src="guide/edit.html" title="길 안내 편집" onload="resizeIframe(this)"></iframe>
+            <li><strong>길 안내 데이터 관리</strong></li>
+            <iframe src="guide/manage.html" title="길 안내 데이터 관리" onload="resizeIframe(this)"></iframe>
+        </ol>
+    </body>
+</html>
